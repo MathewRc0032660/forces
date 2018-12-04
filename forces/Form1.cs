@@ -16,5 +16,34 @@ namespace forces
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double a = double.Parse(textBox1.Text);
+                double ans = sin(a);
+                label1.Text = ans.ToString();
+            }
+
+
+
+            catch
+            {
+                MessageBox.Show("done it wrong mate");
+            }
+        }
+        double sin(double a)
+        {
+            double rad = a / 180.0 * Math.PI;
+            return Math.Sin(rad);
+
+
+
+        }
+        double invSin(double a)
+        {
+         return Math.Asin(a)
+        }
     }
 }
