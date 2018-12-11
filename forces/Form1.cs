@@ -19,19 +19,7 @@ namespace forces
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                double a = double.Parse(textBox1.Text);
-                double ans = sin(a);
-                label1.Text = ans.ToString();
-            }
-
-
-
-            catch
-            {
-                MessageBox.Show("done it wrong mate");
-            }
+           
         }
         double sin(double a)
         {
@@ -41,9 +29,50 @@ namespace forces
 
 
         }
-        double invSin(double a)
+
+        double cos(double a)
         {
-         return Math.Asin(a)
+            double rad = a / 180.0 * Math.PI;
+            return Math.Cos(rad);
+
+
+
+        }
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double F = double.Parse(textBox2.Text);
+                double a = double.Parse(textBox1.Text);
+                double ans = F * cos(a);
+                double ans2 = F * sin(a);
+                label2.Text = "Fx= " + ans + " N";
+                label1.Text = "Fy= " + ans2 + " N";
+            }
+
+
+
+            catch
+            {
+                MessageBox.Show("done it wrong mate");
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
